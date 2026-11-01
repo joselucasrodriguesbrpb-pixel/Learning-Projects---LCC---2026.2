@@ -8,9 +8,8 @@ public class TestaPessoa {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-
+        Pessoa pessoa = new Pessoa();
         List<Pessoa> pessoas = new ArrayList<>();
-        Pessoa pessoa;
 
         int i = 0;
         while(i < 5) {
@@ -22,8 +21,14 @@ public class TestaPessoa {
             pessoa = new Pessoa(nome, idade);
             pessoas.add(pessoa);
         }
-        for (int k = 0; k< pessoas.length; k++) {
 
+        for (int k = 0; k < pessoas.size(); k++) {
+            if (pessoa.ehDeMaior(pessoas.get(k).getIdade())) {
+                System.out.println(pessoas.get(k) + " é de maior!");
+            }
+            else {
+                System.out.println(pessoas.get(k) + " é de menor!");
+            }
         }
     }
 }
